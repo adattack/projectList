@@ -1,0 +1,99 @@
+{
+  "name": "lcg-vcc3",
+  "description": "Low Code Generator -> Vue Component Creater",
+  "version": "0.5.3",
+  "private": false,
+  "keywords": [
+    "low-code",
+    "editor"
+  ],
+  "main": "./dist/vcc3.umd.min.js",
+  "scripts": {
+    "dev": "vite --port 9818",
+    "serve": "vite --port 9818",
+    "build:release": "vite build --base=https://static.imonkey.xueersi.com/vcc3/",
+    "build": "vue-cli-service build --report --target lib --name vcc3 './src/components-v2/VCC.vue'",
+    "build:win": "vue-cli-service build --report --target lib --name vcc3 ./src/components-v2/VCC.vue && node ./src/script/distClear.js",
+    "compileAndbuild:dev": "npm run compileComponent && vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:prod": "vue-cli-service build --mode production",
+    "compileAndBuild:prod": "npm run compileComponent && vue-cli-service build --mode production",
+    "compileComponent": "node ./src/script/compile.js",
+    "debugParser": "node ./src/test/parserJsCode.js"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vitejs/plugin-vue": "^1.10.0",
+    "@vue/compiler-sfc": "^3.2.22",
+    "ant-design-vue": "^3.0.0-alpha.14",
+    "axios": "^0.21.4",
+    "codemirror-editor-vue3": "^0.2.4",
+    "copy-to-clipboard": "^3.3.1",
+    "crypto-random-string": "^3.3.1",
+    "css": "^3.0.0",
+    "css-scoped": "^1.0.0",
+    "echarts": "^5.4.3",
+    "ejs": "^3.1.6",
+    "element-plus": "^2.4.3",
+    "escodegen": "^2.0.0",
+    "espree": "^7.3.0",
+    "eventemitter3": "^4.0.7",
+    "file-saver": "^2.0.2",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
+    "keymaster": "^1.6.2",
+    "lodash-es": "^4.17.21",
+    "nanoid": "^3.1.30",
+    "prettier": "^2.4.0",
+    "split.js": "^1.6.2",
+    "vant": "^3.3.7",
+    "vue": "^3.3.10",
+    "vue-echarts": "^6.6.2",
+    "vue-github-button": "^1.3.0",
+    "vue-template-compiler": "^2.6.14",
+    "vuedraggable": "^4.1.0",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.11.6",
+    "@rollup/plugin-dynamic-import-vars": "^1.4.1",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-vue": "^6.1.2",
+    "is-obj": "^3.0.0",
+    "is-regexp": "^3.0.0",
+    "lint-staged": "^9.5.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "@vue/cli-service": "^5.0.8",
+    "vite": "^2.6.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
