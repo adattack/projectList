@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.RecordMapper">
+    <select id="getPassword" resultType="java.lang.String">
+        select password
+        from webchat.user
+        where username = #{username};
+    </select>
+
+    <select id="getRecord" resultType="com.example.entity.Record">
+        select *
+        from webchat.record
+        where (`from` = #{param1} and `to` = #{param2})
+           or (`from` = #{param2} and `to` = #{param1});
+    </select>
+
+    <insert id="addRecord">
+        insert into webchat.record
+        values (#{id}, #{from}, #{to}, #{content});
+    </insert>
+</mapper>

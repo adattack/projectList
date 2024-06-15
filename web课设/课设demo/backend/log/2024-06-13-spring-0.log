@@ -1,0 +1,1040 @@
+2024-06-13 08:26:46.220  INFO 41560 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 41560 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 08:26:46.223  INFO 41560 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 08:26:47.441  INFO 41560 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 08:26:47.447  INFO 41560 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 08:26:47.487  INFO 41560 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2024-06-13 08:26:48.362  INFO 41560 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 08:26:48.373  INFO 41560 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 08:26:48.373  INFO 41560 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 08:26:48.468  INFO 41560 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 08:26:48.468  INFO 41560 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2206 ms
+2024-06-13 08:26:49.813  INFO 41560 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73852720, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22854f2b, org.springframework.security.web.context.SecurityContextHolderFilter@10e4ee33, org.springframework.security.web.header.HeaderWriterFilter@69fd99c1, org.springframework.security.web.authentication.logout.LogoutFilter@2a5efbb9, com.example.filter.JwtAuthenticationFilter@5aab5b31, com.example.filter.RequestLogFilter@7cd1ec54, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b9c716f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13f182b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1eb7ec59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ae0a26, org.springframework.security.web.session.SessionManagementFilter@180cc0df, org.springframework.security.web.access.ExceptionTranslationFilter@9746157, org.springframework.security.web.access.intercept.AuthorizationFilter@5b2c7186]
+2024-06-13 08:26:50.109  WARN 41560 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 08:26:50.109  WARN 41560 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 08:26:50.157  WARN 41560 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 08:26:50.208  INFO 41560 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 08:26:50.212  INFO 41560 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 08:26:50.267  INFO 41560 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#44de8e00:0/SimpleConnection@59c00010 [delegate=amqp://admin@127.0.0.1:5672/, localPort=64640]
+2024-06-13 08:26:50.326  INFO 41560 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 4.693 seconds (process running for 5.493)
+2024-06-13 08:27:26.342  INFO 41560 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 08:27:26.342  INFO 41560 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13 08:27:26.343  INFO 41560 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13 08:27:26.717 ERROR 41560 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1602)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1533)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1358)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1341)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:1059)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:398)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:393)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:373)
+	at org.springframework.data.redis.core.RedisTemplate.doWithKeys(RedisTemplate.java:785)
+	at org.springframework.data.redis.core.RedisTemplate.hasKey(RedisTemplate.java:571)
+	at com.example.filter.FlowLimitingFilter.tryCount(FlowLimitingFilter.java:62)
+	at com.example.filter.FlowLimitingFilter.doFilter(FlowLimitingFilter.java:48)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.example.filter.CorsFilter.doFilter(CorsFilter.java:34)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost/<unresolved>:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:350)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:112)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:112)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1531)
+	... 48 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:673)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+
+2024-06-13 08:28:45.323  INFO 41560 --- [http-nio-8080-exec-2] (113877933596217344) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 08:28:45.539  INFO 41560 --- [http-nio-8080-exec-2] (113877933596217344) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-13 08:28:45.754  INFO 41560 --- [http-nio-8080-exec-2] (113877933596217344) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@635a8616
+2024-06-13 08:28:45.755  INFO 41560 --- [http-nio-8080-exec-2] (113877933596217344) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-13 08:28:45.893  INFO 41560 --- [http-nio-8080-exec-2] (113877933596217344) com.example.filter.RequestLogFilter      : 请求处理耗时: 571ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 08:28:45.873","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NDk3NzI1LCJpYXQiOjE3MTgyMzg1MjUsImp0aSI6IjUwZGZlOWM0LWVmZWEtNDk1Ni04OWNhLTQyN2ExNmM5ZjJjMSIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.jHEjYCUmryGrXFVrC1X4uJv9dfjHo-o2lUD6hsB7GY8","username":"driac"},"id":113877933596217344,"message":"请求成功"}
+2024-06-13 08:28:47.356  INFO 41560 --- [http-nio-8080-exec-3] (113877942131625984) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:28:47.380  INFO 41560 --- [http-nio-8080-exec-3] (113877942131625984) com.example.filter.RequestLogFilter      : 请求处理耗时: 24ms | 响应结果: 101 错误
+2024-06-13 08:28:52.040  INFO 41560 --- [http-nio-8080-exec-7] (113877961777745920) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:28:52.042  INFO 41560 --- [http-nio-8080-exec-7] (113877961777745920) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 08:28:54.990  INFO 41560 --- [http-nio-8080-exec-4] (113877974150942720) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:28:54.997  INFO 41560 --- [http-nio-8080-exec-4] (113877974150942720) com.example.filter.RequestLogFilter      : 请求处理耗时: 7ms | 响应结果: 
+2024-06-13 08:29:00.628  INFO 41560 --- [http-nio-8080-exec-8] (113877997798428672) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 08:29:00.700  INFO 41560 --- [http-nio-8080-exec-8] (113877997798428672) com.example.filter.RequestLogFilter      : 请求处理耗时: 72ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 08:29:00.7","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NDk3NzQwLCJpYXQiOjE3MTgyMzg1NDAsImp0aSI6ImVkODYxNjAyLTkwODktNDBjYy04MTg4LTYxZThmMDI3ODJhMCIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.UN_zcF5NJCLv7Q9CcS-Lu-H4__FB-uwm2Sw2vOuVSv8","username":"driac"},"id":113877997798428672,"message":"请求成功"}
+2024-06-13 08:29:00.755  INFO 41560 --- [http-nio-8080-exec-9] (113877998331105280) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:00.756  INFO 41560 --- [http-nio-8080-exec-9] (113877998331105280) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 08:29:06.256  INFO 41560 --- [http-nio-8080-exec-2] (113878021403971584) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:06.258  INFO 41560 --- [http-nio-8080-exec-2] (113878021403971584) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 08:29:08.057  INFO 41560 --- [http-nio-8080-exec-6] (113878028957913088) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:08.059  INFO 41560 --- [http-nio-8080-exec-6] (113878028957913088) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 08:29:08.903  INFO 41560 --- [http-nio-8080-exec-4] (113878032506294272) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:08.904  INFO 41560 --- [http-nio-8080-exec-4] (113878032506294272) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 08:29:09.736  INFO 41560 --- [http-nio-8080-exec-8] (113878036000149504) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:09.738  INFO 41560 --- [http-nio-8080-exec-8] (113878036000149504) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 08:29:13.712  INFO 41560 --- [http-nio-8080-exec-9] (113878052676702208) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:13.713  INFO 41560 --- [http-nio-8080-exec-9] (113878052676702208) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 08:29:18.131  INFO 41560 --- [http-nio-8080-exec-1] (113878071211331584) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 08:29:18.132  INFO 41560 --- [http-nio-8080-exec-1] (113878071211331584) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 08:41:12.830  INFO 41560 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 08:41:13.276  INFO 41560 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 08:41:13.303  INFO 41560 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-13 08:41:13.309  INFO 41560 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-13 08:42:36.043  INFO 40760 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 40760 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 08:42:36.044  INFO 40760 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 08:42:36.654  INFO 40760 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 08:42:36.656  INFO 40760 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 08:42:36.677  INFO 40760 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-13 08:42:37.218  INFO 40760 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 08:42:37.224  INFO 40760 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 08:42:37.224  INFO 40760 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 08:42:37.294  INFO 40760 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 08:42:37.295  INFO 40760 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1222 ms
+2024-06-13 08:42:38.183  INFO 40760 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7030b74c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27d6267e, org.springframework.security.web.context.SecurityContextHolderFilter@5d4a34ff, org.springframework.security.web.header.HeaderWriterFilter@69c227fd, org.springframework.security.web.authentication.logout.LogoutFilter@5b2c7186, com.example.filter.JwtAuthenticationFilter@23f5008a, com.example.filter.RequestLogFilter@2bb0e277, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@fcd3a6f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ef04613, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37c5b8e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@512dc0e0, org.springframework.security.web.session.SessionManagementFilter@1eb7ec59, org.springframework.security.web.access.ExceptionTranslationFilter@13f182b9, org.springframework.security.web.access.intercept.AuthorizationFilter@7b9d1a4]
+2024-06-13 08:42:38.413  WARN 40760 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 08:42:38.413  WARN 40760 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 08:42:38.457  WARN 40760 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 08:42:38.501  INFO 40760 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 08:42:38.504  INFO 40760 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 08:42:38.539  INFO 40760 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1ad1b737:0/SimpleConnection@3aa63b53 [delegate=amqp://admin@127.0.0.1:5672/, localPort=62676]
+2024-06-13 08:42:38.576  INFO 40760 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.919 seconds (process running for 3.425)
+2024-06-13 08:47:29.238  INFO 40760 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 08:47:29.800  INFO 40760 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 09:12:35.334  INFO 39280 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 39280 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:12:35.336  INFO 39280 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:12:35.750  WARN 39280 --- [main] (system) ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'serverEndpointExporter' defined in class path resource [com/example/config/WebSocketConfiguration.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSocketConfiguration; factoryMethodName=serverEndpointExporter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/example/config/WebSocketConfiguration.class]] for bean 'serverEndpointExporter' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSocketConfig; factoryMethodName=serverEndpointExporter; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/example/config/WebSocketConfig.class]] bound.
+2024-06-13 09:12:35.756  INFO 39280 --- [main] (system) .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-13 09:12:35.771 ERROR 39280 --- [main] (system) o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'serverEndpointExporter', defined in class path resource [com/example/config/WebSocketConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [com/example/config/WebSocketConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-06-13 09:13:54.684  INFO 17008 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 17008 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:13:54.686  INFO 17008 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:13:55.271  INFO 17008 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:13:55.273  INFO 17008 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:13:55.292  INFO 17008 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:13:55.794  INFO 17008 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:13:55.803  INFO 17008 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:13:55.804  INFO 17008 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:13:55.883  INFO 17008 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:13:55.883  INFO 17008 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1167 ms
+2024-06-13 09:13:56.807  INFO 17008 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cf3a7f9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42db955e, org.springframework.security.web.context.SecurityContextHolderFilter@19ce19b7, org.springframework.security.web.header.HeaderWriterFilter@3205610d, org.springframework.security.web.authentication.logout.LogoutFilter@16c8e9b8, com.example.filter.JwtAuthenticationFilter@77ab5214, com.example.filter.RequestLogFilter@2cea921a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@18f4086e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b240276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1835b783, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bd2f039, org.springframework.security.web.session.SessionManagementFilter@4e789704, org.springframework.security.web.access.ExceptionTranslationFilter@37c5b8e8, org.springframework.security.web.access.intercept.AuthorizationFilter@53fc870f]
+2024-06-13 09:13:57.047  WARN 17008 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 09:13:57.047  WARN 17008 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 09:13:57.088  WARN 17008 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 09:13:57.133  INFO 17008 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 09:13:57.136  INFO 17008 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 09:13:57.180  INFO 17008 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#70b196d3:0/SimpleConnection@35efd12c [delegate=amqp://admin@127.0.0.1:5672/, localPort=59566]
+2024-06-13 09:13:57.219  INFO 17008 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.914 seconds (process running for 3.433)
+2024-06-13 09:14:19.378  INFO 17008 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 09:14:19.378  INFO 17008 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13 09:14:19.379  INFO 17008 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13 09:14:19.748  INFO 17008 --- [http-nio-8080-exec-1] (113889402605932544) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 09:14:19.939  INFO 17008 --- [http-nio-8080-exec-1] (113889402605932544) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-13 09:14:20.120  INFO 17008 --- [http-nio-8080-exec-1] (113889402605932544) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28a686f2
+2024-06-13 09:14:20.121  INFO 17008 --- [http-nio-8080-exec-1] (113889402605932544) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-13 09:14:20.258  INFO 17008 --- [http-nio-8080-exec-1] (113889402605932544) com.example.filter.RequestLogFilter      : 请求处理耗时: 512ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 09:14:20.238","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAwNDYwLCJpYXQiOjE3MTgyNDEyNjAsImp0aSI6ImM3ZDI1NDUyLWJlZWUtNDQ2OC1iZjJiLTAyNWI2M2I3Y2NhNiIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.Mfak9aG7RdLsCZvJBKMlljLAIRAi28MEx3VHGNueCVo","username":"driac"},"id":113889402605932544,"message":"请求成功"}
+2024-06-13 09:14:20.508  INFO 17008 --- [http-nio-8080-exec-3] (113889405801992192) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:14:20.549  INFO 17008 --- [http-nio-8080-exec-3] (113889405801992192) com.example.filter.RequestLogFilter      : 请求处理耗时: 41ms | 响应结果: 101 错误
+2024-06-13 09:14:26.582  INFO 17008 --- [http-nio-8080-exec-2] (113889431278194688) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:14:26.583  INFO 17008 --- [http-nio-8080-exec-2] (113889431278194688) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:14:28.631  INFO 17008 --- [http-nio-8080-exec-4] (113889439872323584) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:14:28.632  INFO 17008 --- [http-nio-8080-exec-4] (113889439872323584) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:14:54.062  INFO 17008 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 09:14:54.672  INFO 17008 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 09:14:54.698  INFO 17008 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-13 09:14:54.703  INFO 17008 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-13 09:15:01.045  INFO 45876 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 45876 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:15:01.046  INFO 45876 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:15:01.648  INFO 45876 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:15:01.650  INFO 45876 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:15:01.670  INFO 45876 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:15:02.147  INFO 45876 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:15:02.154  INFO 45876 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:15:02.154  INFO 45876 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:15:02.221  INFO 45876 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:15:02.222  INFO 45876 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1145 ms
+2024-06-13 09:15:03.189  INFO 45876 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53fc870f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18f4086e, org.springframework.security.web.context.SecurityContextHolderFilter@3205610d, org.springframework.security.web.header.HeaderWriterFilter@2d3d4a54, org.springframework.security.web.authentication.logout.LogoutFilter@5ddf5118, com.example.filter.JwtAuthenticationFilter@7cd1ec54, com.example.filter.RequestLogFilter@657b3b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75063bd0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e789704, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13047d3d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@43cbafa6, org.springframework.security.web.session.SessionManagementFilter@2b19b346, org.springframework.security.web.access.ExceptionTranslationFilter@7cbede2b, org.springframework.security.web.access.intercept.AuthorizationFilter@f96654]
+2024-06-13 09:15:03.433  WARN 45876 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 09:15:03.434  WARN 45876 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 09:15:03.478  WARN 45876 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 09:15:03.524  INFO 45876 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 09:15:03.527  INFO 45876 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 09:15:03.566  INFO 45876 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#342a1f84:0/SimpleConnection@66e62fc4 [delegate=amqp://admin@127.0.0.1:5672/, localPort=59740]
+2024-06-13 09:15:03.604  INFO 45876 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.976 seconds (process running for 3.482)
+2024-06-13 09:16:48.945  INFO 45876 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 09:16:48.945  INFO 45876 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13 09:16:48.946  INFO 45876 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13 09:16:49.339  INFO 45876 --- [http-nio-8080-exec-2] (113890030040256512) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 127.0.0.1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:16:49.339  INFO 45876 --- [http-nio-8080-exec-1] (113890030040256513) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:16:49.467  INFO 45876 --- [http-nio-8080-exec-1] (113890030040256513) com.example.filter.RequestLogFilter      : 请求处理耗时: 127ms | 响应结果: 101 错误
+2024-06-13 09:16:49.467  INFO 45876 --- [http-nio-8080-exec-2] (113890030040256512) com.example.filter.RequestLogFilter      : 请求处理耗时: 127ms | 响应结果: 101 错误
+2024-06-13 09:18:02.821  INFO 45876 --- [http-nio-8080-exec-5] (113890338250297344) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:18:02.823  INFO 45876 --- [http-nio-8080-exec-5] (113890338250297344) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:18:03.062  INFO 45876 --- [http-nio-8080-exec-6] (113890339256930304) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:18:03.063  INFO 45876 --- [http-nio-8080-exec-6] (113890339256930304) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:18:34.972  INFO 45876 --- [http-nio-8080-exec-7] (113890473101365248) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:18:34.973  INFO 45876 --- [http-nio-8080-exec-7] (113890473101365248) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:20:40.322  INFO 45876 --- [http-nio-8080-exec-10] (113890998857371648) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:20:40.323  INFO 45876 --- [http-nio-8080-exec-10] (113890998857371648) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:20:53.195  INFO 45876 --- [http-nio-8080-exec-2] (113891052850647040) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:20:53.197  INFO 45876 --- [http-nio-8080-exec-2] (113891052850647040) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:22:11.013  INFO 45876 --- [http-nio-8080-exec-3] (113891379242995712) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:22:11.015  INFO 45876 --- [http-nio-8080-exec-3] (113891379242995712) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:22:56.975  INFO 45876 --- [http-nio-8080-exec-6] (113891572021596160) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:22:56.977  INFO 45876 --- [http-nio-8080-exec-6] (113891572021596160) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:23:47.287  INFO 45876 --- [http-nio-8080-exec-7] (113891783045419008) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:23:47.289  INFO 45876 --- [http-nio-8080-exec-7] (113891783045419008) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:23:54.396  INFO 45876 --- [http-nio-8080-exec-10] (113891812862726144) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:23:54.397  INFO 45876 --- [http-nio-8080-exec-10] (113891812862726144) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:24:13.133  INFO 45876 --- [http-nio-8080-exec-2] (113891891451400192) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:24:13.135  INFO 45876 --- [http-nio-8080-exec-2] (113891891451400192) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:24:17.850  INFO 45876 --- [http-nio-8080-exec-3] (113891911235932160) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:24:17.851  INFO 45876 --- [http-nio-8080-exec-3] (113891911235932160) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:24:24.881  INFO 45876 --- [http-nio-8080-exec-5] (113891940726083584) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:24:24.893  INFO 45876 --- [http-nio-8080-exec-5] (113891940726083584) com.example.filter.RequestLogFilter      : 请求处理耗时: 12ms | 响应结果: 
+2024-06-13 09:24:30.651  INFO 45876 --- [http-nio-8080-exec-8] (113891964923023360) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 09:24:30.766  INFO 45876 --- [http-nio-8080-exec-8] (113891964923023360) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-13 09:24:30.947  INFO 45876 --- [http-nio-8080-exec-8] (113891964923023360) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e19aae4
+2024-06-13 09:24:30.948  INFO 45876 --- [http-nio-8080-exec-8] (113891964923023360) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-13 09:24:31.061  INFO 45876 --- [http-nio-8080-exec-8] (113891964923023360) com.example.filter.RequestLogFilter      : 请求处理耗时: 411ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 09:24:31.056","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAxMDcxLCJpYXQiOjE3MTgyNDE4NzEsImp0aSI6IjE3ZWYwZGIzLWIyMzgtNGY3OS1hMjc2LWFiMGVhMGZiODNiZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.SWBH1ezHQs2moR8hkiLXC_T7Mo_yAe3vTG4FhNlj2eo","username":"driac"},"id":113891964923023360,"message":"请求成功"}
+2024-06-13 09:24:31.127  INFO 45876 --- [http-nio-8080-exec-7] (113891966923706368) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:24:31.129  INFO 45876 --- [http-nio-8080-exec-7] (113891966923706368) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:24:52.249  INFO 45876 --- [http-nio-8080-exec-6] (113892055515795456) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:24:52.250  INFO 45876 --- [http-nio-8080-exec-6] (113892055515795456) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:27:37.325  INFO 45876 --- [http-nio-8080-exec-1] (113892747894722560) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:27:37.326  INFO 45876 --- [http-nio-8080-exec-1] (113892747894722560) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:27:44.309  INFO 45876 --- [http-nio-8080-exec-4] (113892777187741696) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:27:44.310  INFO 45876 --- [http-nio-8080-exec-4] (113892777187741696) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:27:48.893  INFO 45876 --- [http-nio-8080-exec-3] (113892796414431232) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:27:48.894  INFO 45876 --- [http-nio-8080-exec-3] (113892796414431232) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:28:03.353  INFO 45876 --- [http-nio-8080-exec-8] (113892857064067072) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:28:03.354  INFO 45876 --- [http-nio-8080-exec-8] (113892857064067072) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:28:09.088  INFO 45876 --- [http-nio-8080-exec-9] (113892881118400512) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:28:09.089  INFO 45876 --- [http-nio-8080-exec-9] (113892881118400512) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:29:29.251  INFO 45876 --- [http-nio-8080-exec-1] (113893217346392064) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:29:29.252  INFO 45876 --- [http-nio-8080-exec-1] (113893217346392064) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:33:41.438  INFO 45876 --- [http-nio-8080-exec-2] (113894275095334912) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 09:33:41.513  INFO 45876 --- [http-nio-8080-exec-2] (113894275095334912) com.example.filter.RequestLogFilter      : 请求处理耗时: 75ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 09:33:41.513","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAxNjIxLCJpYXQiOjE3MTgyNDI0MjEsImp0aSI6ImZjOTA4MDAwLTY3NjMtNGRiMy1iYzg1LTNlYThkNDQ5MGM4ZCIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.wAdwL_5KdvQuH71n2xpTF1_EtN4_o3GvzjMSOmpJEbo","username":"driac"},"id":113894275095334912,"message":"请求成功"}
+2024-06-13 09:33:42.014  INFO 45876 --- [http-nio-8080-exec-4] (113894277511254016) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:33:42.015  INFO 45876 --- [http-nio-8080-exec-4] (113894277511254016) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:33:50.993  INFO 45876 --- [http-nio-8080-exec-3] (113894315171909632) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:33:50.994  INFO 45876 --- [http-nio-8080-exec-3] (113894315171909632) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:34:18.615  INFO 45876 --- [http-nio-8080-exec-6] (113894431026974720) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:34:18.616  INFO 45876 --- [http-nio-8080-exec-6] (113894431026974720) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:34:21.939  INFO 45876 --- [http-nio-8080-exec-9] (113894444968841216) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:34:21.940  INFO 45876 --- [http-nio-8080-exec-9] (113894444968841216) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:39:19.538  INFO 45876 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 09:39:20.069  INFO 45876 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 09:39:20.099  INFO 45876 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-13 09:39:20.105  INFO 45876 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-13 09:39:22.204  INFO 17176 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 17176 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:39:22.206  INFO 17176 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:39:22.847  INFO 17176 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:39:22.849  INFO 17176 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:39:22.867  INFO 17176 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:39:23.352  INFO 17176 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:39:23.359  INFO 17176 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:39:23.359  INFO 17176 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:39:23.436  INFO 17176 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:39:23.436  INFO 17176 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1198 ms
+2024-06-13 09:39:23.909  WARN 17176 --- [main] (system) ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed
+2024-06-13 09:39:23.921  INFO 17176 --- [main] (system) o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-13 09:39:23.930  INFO 17176 --- [main] (system) .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-13 09:39:23.941 ERROR 17176 --- [main] (system) o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:323)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.MyProjectBackendApplication.main(MyProjectBackendApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountServiceImpl': Unsatisfied dependency expressed through field 'baseMapper': Error creating bean with name 'accountMapper' defined in file [G:\project\web-demo\my-project-backend\target\classes\com\example\mapper\AccountMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:716)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:696)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:531)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:508)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:270)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:320)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountMapper' defined in file [G:\project\web-demo\my-project-backend\target\classes\com\example\mapper\AccountMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:550)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 49 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 73 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 74 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 80 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 82 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 86 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 88 common frames omitted
+
+2024-06-13 09:40:46.801  INFO 44944 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 44944 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:40:46.802  INFO 44944 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:40:47.469  INFO 44944 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:40:47.471  INFO 44944 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:40:47.494  INFO 44944 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:40:47.979  INFO 44944 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:40:47.985  INFO 44944 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:40:47.985  INFO 44944 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:40:48.054  INFO 44944 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:40:48.055  INFO 44944 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1224 ms
+2024-06-13 09:40:48.588  WARN 44944 --- [main] (system) ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed
+2024-06-13 09:40:48.600  INFO 44944 --- [main] (system) o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-13 09:40:48.611  INFO 44944 --- [main] (system) .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-13 09:40:48.621 ERROR 44944 --- [main] (system) o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:323)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.MyProjectBackendApplication.main(MyProjectBackendApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountServiceImpl': Unsatisfied dependency expressed through field 'baseMapper': Error creating bean with name 'accountMapper' defined in file [G:\project\web-demo\my-project-backend\target\classes\com\example\mapper\AccountMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:716)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:696)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:531)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:508)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:270)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:320)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountMapper' defined in file [G:\project\web-demo\my-project-backend\target\classes\com\example\mapper\AccountMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:550)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 49 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 73 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 74 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 80 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 82 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 86 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 88 common frames omitted
+
+2024-06-13 09:43:54.933  INFO 48248 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 48248 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:43:54.934  INFO 48248 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:43:55.574  INFO 48248 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:43:55.577  INFO 48248 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:43:55.597  INFO 48248 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:43:56.098  INFO 48248 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:43:56.105  INFO 48248 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:43:56.105  INFO 48248 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:43:56.172  INFO 48248 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:43:56.173  INFO 48248 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1207 ms
+2024-06-13 09:43:56.661  WARN 48248 --- [main] (system) ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed
+2024-06-13 09:43:56.678  INFO 48248 --- [main] (system) o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-13 09:43:56.688  INFO 48248 --- [main] (system) .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-13 09:43:56.699 ERROR 48248 --- [main] (system) o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfiguration': Injection of resource dependencies failed
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:323)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.MyProjectBackendApplication.main(MyProjectBackendApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountServiceImpl': Unsatisfied dependency expressed through field 'baseMapper': Error creating bean with name 'accountMapper' defined in file [G:\project\web-demo\my-project-backend\target\classes\com\example\mapper\AccountMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:716)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:696)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:531)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:508)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:270)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:320)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountMapper' defined in file [G:\project\web-demo\my-project-backend\target\classes\com\example\mapper\AccountMapper.class]: Cannot resolve reference to bean 'sqlSessionTemplate' while setting bean property 'sqlSessionTemplate'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:550)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 49 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 73 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 74 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\project\web-demo\my-project-backend\target\classes\mapper\FriendMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 80 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 82 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.lkunk.websocket_springboot.entity.User'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 86 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.lkunk.websocket_springboot.entity.User
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 88 common frames omitted
+
+2024-06-13 09:44:29.630  INFO 48796 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 48796 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:44:29.632  INFO 48796 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:44:30.213  INFO 48796 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:44:30.215  INFO 48796 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:44:30.234  INFO 48796 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:44:30.726  INFO 48796 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:44:30.733  INFO 48796 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:44:30.733  INFO 48796 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:44:30.803  INFO 48796 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:44:30.803  INFO 48796 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1139 ms
+2024-06-13 09:44:31.747  INFO 48796 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33e8694b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fc71437, org.springframework.security.web.context.SecurityContextHolderFilter@73e93c3a, org.springframework.security.web.header.HeaderWriterFilter@19ce19b7, org.springframework.security.web.authentication.logout.LogoutFilter@75063bd0, com.example.filter.JwtAuthenticationFilter@5c9a4f3b, com.example.filter.RequestLogFilter@2707c790, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@42db955e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@456b140f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3601549f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75c15f76, org.springframework.security.web.session.SessionManagementFilter@4b240276, org.springframework.security.web.access.ExceptionTranslationFilter@5751e53e, org.springframework.security.web.access.intercept.AuthorizationFilter@5cf3a7f9]
+2024-06-13 09:44:31.969  WARN 48796 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 09:44:31.969  WARN 48796 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 09:44:32.010  WARN 48796 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 09:44:32.055  INFO 48796 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 09:44:32.058  INFO 48796 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 09:44:32.092  INFO 48796 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#f810c18:0/SimpleConnection@35efd12c [delegate=amqp://admin@127.0.0.1:5672/, localPort=59114]
+2024-06-13 09:44:32.129  INFO 48796 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.905 seconds (process running for 3.445)
+2024-06-13 09:47:22.032  INFO 48796 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 09:47:22.503  INFO 48796 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 09:47:24.585  INFO 44452 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 44452 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:47:24.586  INFO 44452 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:47:25.187  INFO 44452 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:47:25.189  INFO 44452 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:47:25.210  INFO 44452 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:47:25.688  INFO 44452 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:47:25.694  INFO 44452 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:47:25.694  INFO 44452 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:47:25.761  INFO 44452 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:47:25.762  INFO 44452 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1144 ms
+2024-06-13 09:47:26.704  INFO 44452 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@379b4e86, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f4df55e, org.springframework.security.web.context.SecurityContextHolderFilter@186d6033, org.springframework.security.web.header.HeaderWriterFilter@323eecf8, org.springframework.security.web.authentication.logout.LogoutFilter@3921135e, com.example.filter.JwtAuthenticationFilter@44abdb1f, com.example.filter.RequestLogFilter@6f24ce45, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ab7f649, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69419d59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4679554d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72bce309, org.springframework.security.web.session.SessionManagementFilter@6e355249, org.springframework.security.web.access.ExceptionTranslationFilter@4b916cc2, org.springframework.security.web.access.intercept.AuthorizationFilter@62ee1c89]
+2024-06-13 09:47:26.935  WARN 44452 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 09:47:26.935  WARN 44452 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 09:47:26.984  WARN 44452 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 09:47:27.036  INFO 44452 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 09:47:27.040  INFO 44452 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 09:47:27.084  INFO 44452 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7f4f1536:0/SimpleConnection@448a6d00 [delegate=amqp://admin@127.0.0.1:5672/, localPort=59362]
+2024-06-13 09:47:27.130  INFO 44452 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.935 seconds (process running for 3.457)
+2024-06-13 09:48:10.414  INFO 44452 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 09:48:10.441  INFO 44452 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 09:48:12.463  INFO 49504 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 49504 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 09:48:12.464  INFO 49504 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 09:48:13.109  INFO 49504 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 09:48:13.111  INFO 49504 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 09:48:13.131  INFO 49504 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-13 09:48:13.606  INFO 49504 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 09:48:13.612  INFO 49504 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 09:48:13.612  INFO 49504 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 09:48:13.681  INFO 49504 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 09:48:13.681  INFO 49504 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1183 ms
+2024-06-13 09:48:14.636  INFO 49504 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62410e1f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5296f00c, org.springframework.security.web.context.SecurityContextHolderFilter@96075c0, org.springframework.security.web.header.HeaderWriterFilter@20b67366, org.springframework.security.web.authentication.logout.LogoutFilter@1479ed5a, com.example.filter.JwtAuthenticationFilter@657b3b, com.example.filter.RequestLogFilter@32b112a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@379b4e86, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4679554d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bba9949, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4727e5fc, org.springframework.security.web.session.SessionManagementFilter@5c0ece6d, org.springframework.security.web.access.ExceptionTranslationFilter@6e355249, org.springframework.security.web.access.intercept.AuthorizationFilter@220be130]
+2024-06-13 09:48:14.864  WARN 49504 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 09:48:14.864  WARN 49504 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 09:48:14.907  WARN 49504 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 09:48:14.956  INFO 49504 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 09:48:14.960  INFO 49504 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 09:48:14.997  INFO 49504 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#f810c18:0/SimpleConnection@d28a235 [delegate=amqp://admin@127.0.0.1:5672/, localPort=59444]
+2024-06-13 09:48:15.041  INFO 49504 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.952 seconds (process running for 3.474)
+2024-06-13 09:52:09.725  INFO 49504 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 09:52:09.726  INFO 49504 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13 09:52:09.727  INFO 49504 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13 09:52:10.128  INFO 49504 --- [http-nio-8080-exec-1] (113898925269848064) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:52:10.259  INFO 49504 --- [http-nio-8080-exec-1] (113898925269848064) com.example.filter.RequestLogFilter      : 请求处理耗时: 132ms | 响应结果: 101 错误
+2024-06-13 09:58:48.603  INFO 49504 --- [http-nio-8080-exec-3] (113900596603523072) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:58:48.605  INFO 49504 --- [http-nio-8080-exec-3] (113900596603523072) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:58:53.269  INFO 49504 --- [http-nio-8080-exec-4] (113900616174145536) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:58:53.271  INFO 49504 --- [http-nio-8080-exec-4] (113900616174145536) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:59:17.720  INFO 49504 --- [http-nio-8080-exec-9] (113900718729072640) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:17.721  INFO 49504 --- [http-nio-8080-exec-9] (113900718729072640) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:22.821  INFO 49504 --- [http-nio-8080-exec-10] (113900740124217344) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:22.837  INFO 49504 --- [http-nio-8080-exec-10] (113900740124217344) com.example.filter.RequestLogFilter      : 请求处理耗时: 16ms | 响应结果: 
+2024-06-13 09:59:34.982  INFO 49504 --- [http-nio-8080-exec-3] (113900791126953984) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 09:59:35.094  INFO 49504 --- [http-nio-8080-exec-3] (113900791126953984) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-13 09:59:35.287  INFO 49504 --- [http-nio-8080-exec-3] (113900791126953984) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8dc0678
+2024-06-13 09:59:35.288  INFO 49504 --- [http-nio-8080-exec-3] (113900791126953984) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-13 09:59:35.411  INFO 49504 --- [http-nio-8080-exec-3] (113900791126953984) com.example.filter.RequestLogFilter      : 请求处理耗时: 430ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 09:59:35.404","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAzMTc1LCJpYXQiOjE3MTgyNDM5NzUsImp0aSI6IjRkZWVkYzI0LTJjODMtNDMxNi1iZWIyLTcyMjAzYWUzZjI0OCIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.4kc1dOKRC9_pyt07wN3GoWSg3_txDwhytkw7VcSUQts","username":"driac"},"id":113900791126953984,"message":"请求成功"}
+2024-06-13 09:59:35.492  INFO 49504 --- [http-nio-8080-exec-2] (113900793266049024) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:35.493  INFO 49504 --- [http-nio-8080-exec-2] (113900793266049024) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:40.844  INFO 49504 --- [http-nio-8080-exec-6] (113900815713964032) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:40.845  INFO 49504 --- [http-nio-8080-exec-6] (113900815713964032) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:59:44.526  INFO 49504 --- [http-nio-8080-exec-8] (113900831161585664) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:44.528  INFO 49504 --- [http-nio-8080-exec-8] (113900831161585664) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:59:45.677  INFO 49504 --- [http-nio-8080-exec-10] (113900835989229568) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:45.678  INFO 49504 --- [http-nio-8080-exec-10] (113900835989229568) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:46.335  INFO 49504 --- [http-nio-8080-exec-3] (113900838749081600) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:46.336  INFO 49504 --- [http-nio-8080-exec-3] (113900838749081600) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:47.134  INFO 49504 --- [http-nio-8080-exec-5] (113900842100330496) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:47.136  INFO 49504 --- [http-nio-8080-exec-5] (113900842100330496) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 09:59:48.673  INFO 49504 --- [http-nio-8080-exec-6] (113900848555364352) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:48.674  INFO 49504 --- [http-nio-8080-exec-6] (113900848555364352) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:49.945  INFO 49504 --- [http-nio-8080-exec-8] (113900853890519040) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:49.946  INFO 49504 --- [http-nio-8080-exec-8] (113900853890519040) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:53.269  INFO 49504 --- [http-nio-8080-exec-10] (113900867832385536) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:53.270  INFO 49504 --- [http-nio-8080-exec-10] (113900867832385536) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 09:59:55.245  INFO 49504 --- [http-nio-8080-exec-1] (113900876120330240) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 09:59:55.246  INFO 49504 --- [http-nio-8080-exec-1] (113900876120330240) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 
+2024-06-13 10:00:02.109  INFO 49504 --- [http-nio-8080-exec-2] (113900904910032896) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 10:00:02.180  INFO 49504 --- [http-nio-8080-exec-2] (113900904910032896) com.example.filter.RequestLogFilter      : 请求处理耗时: 71ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 10:00:02.18","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAzMjAyLCJpYXQiOjE3MTgyNDQwMDIsImp0aSI6ImE0NWQ4ODY4LTM4OTAtNGQ4YS05ZGY4LTA4YWQwNDliZTUwNiIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.iAN7-vHjGPucrt-J5cApidqF3PvjEkSWMS6dL7iMh8c","username":"driac"},"id":113900904910032896,"message":"请求成功"}
+2024-06-13 10:00:02.252  INFO 49504 --- [http-nio-8080-exec-5] (113900905509818368) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:00:02.253  INFO 49504 --- [http-nio-8080-exec-5] (113900905509818368) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:00:05.143  INFO 49504 --- [http-nio-8080-exec-7] (113900917631356928) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:00:05.146  INFO 49504 --- [http-nio-8080-exec-7] (113900917631356928) com.example.filter.RequestLogFilter      : 请求处理耗时: 4ms | 响应结果: 101 错误
+2024-06-13 10:00:08.282  INFO 49504 --- [http-nio-8080-exec-8] (113900930801471488) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:00:08.284  INFO 49504 --- [http-nio-8080-exec-8] (113900930801471488) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 
+2024-06-13 10:00:40.154  INFO 49504 --- [http-nio-8080-exec-1] (113901064478134272) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 10:00:40.224  INFO 49504 --- [http-nio-8080-exec-1] (113901064478134272) com.example.filter.RequestLogFilter      : 请求处理耗时: 71ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 10:00:40.224","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAzMjQwLCJpYXQiOjE3MTgyNDQwNDAsImp0aSI6IjU2Mzg5ZDM1LTUxZTQtNGUwYS04NDg3LTQ2YjZkMWE2YmMwMyIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.7WCi9Zs9tOPyb4-RliEBXmISiG-r0Uslyzk1_SFJ7m0","username":"driac"},"id":113901064478134272,"message":"请求成功"}
+2024-06-13 10:00:40.993  INFO 49504 --- [http-nio-8080-exec-3] (113901068001349632) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:00:40.994  INFO 49504 --- [http-nio-8080-exec-3] (113901068001349632) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:00:44.728  INFO 49504 --- [http-nio-8080-exec-5] (113901083667075072) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:00:44.729  INFO 49504 --- [http-nio-8080-exec-5] (113901083667075072) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:00:53.559  INFO 49504 --- [http-nio-8080-exec-6] (113901120706973696) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:00:53.560  INFO 49504 --- [http-nio-8080-exec-6] (113901120706973696) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:04:30.426  INFO 49504 --- [http-nio-8080-exec-9] (113902030313099264) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:04:30.427  INFO 49504 --- [http-nio-8080-exec-9] (113902030313099264) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:06:30.096  INFO 49504 --- [http-nio-8080-exec-1] (113902532245458944) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:06:30.097  INFO 49504 --- [http-nio-8080-exec-1] (113902532245458944) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:07:05.778  INFO 49504 --- [http-nio-8080-exec-2] (113902681906614272) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:07:05.779  INFO 49504 --- [http-nio-8080-exec-2] (113902681906614272) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:07:13.718  INFO 49504 --- [http-nio-8080-exec-4] (113902715209388032) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:07:13.719  INFO 49504 --- [http-nio-8080-exec-4] (113902715209388032) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:07:47.099  INFO 49504 --- [http-nio-8080-exec-8] (113902855219449856) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:07:47.101  INFO 49504 --- [http-nio-8080-exec-8] (113902855219449856) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 10:13:07.886  INFO 49504 --- [http-nio-8080-exec-9] (113904200697647104) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 10:13:07.954  INFO 49504 --- [http-nio-8080-exec-9] (113904200697647104) com.example.filter.RequestLogFilter      : 请求处理耗时: 68ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 10:13:07.954","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTAzOTg3LCJpYXQiOjE3MTgyNDQ3ODcsImp0aSI6ImY3NmVhZGIxLWZiMTctNGQ2Ny05ZDkzLTYzM2E5Zjk2NGZhNSIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.e228HQF9IcD1Pf1M-D92bilUs8pv4HWrvFCITxgc6LY","username":"driac"},"id":113904200697647104,"message":"请求成功"}
+2024-06-13 10:13:08.128  INFO 49504 --- [http-nio-8080-exec-10] (113904201712668672) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:08.130  INFO 49504 --- [http-nio-8080-exec-10] (113904201712668672) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 10:13:11.097  INFO 49504 --- [http-nio-8080-exec-1] (113904214165557248) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:11.098  INFO 49504 --- [http-nio-8080-exec-1] (113904214165557248) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:13:12.291  INFO 49504 --- [http-nio-8080-exec-2] (113904219173556224) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:12.292  INFO 49504 --- [http-nio-8080-exec-2] (113904219173556224) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:13:13.570  INFO 49504 --- [http-nio-8080-exec-4] (113904224538071040) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:13.571  INFO 49504 --- [http-nio-8080-exec-4] (113904224538071040) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:13:15.306  INFO 49504 --- [http-nio-8080-exec-6] (113904231819382784) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:15.308  INFO 49504 --- [http-nio-8080-exec-6] (113904231819382784) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 
+2024-06-13 10:13:19.396  INFO 49504 --- [http-nio-8080-exec-10] (113904248974086144) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:19.398  INFO 49504 --- [http-nio-8080-exec-10] (113904248974086144) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:13:35.609  INFO 49504 --- [http-nio-8080-exec-2] (113904316976336896) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:13:35.611  INFO 49504 --- [http-nio-8080-exec-2] (113904316976336896) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 
+2024-06-13 10:16:13.329  INFO 49504 --- [http-nio-8080-exec-8] (113904978501963776) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:16:13.330  INFO 49504 --- [http-nio-8080-exec-8] (113904978501963776) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:17:53.095  INFO 49504 --- [http-nio-8080-exec-9] (113905396950896640) com.example.filter.RequestLogFilter      : 请求URL: "/" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:17:53.100  INFO 49504 --- [http-nio-8080-exec-9] (113905396950896640) com.example.filter.RequestLogFilter      : 请求处理耗时: 5ms | 响应结果: {"code":401,"data":null,"id":113905396950896640,"message":"Full authentication is required to access this resource"}
+2024-06-13 10:21:47.253  INFO 49504 --- [http-nio-8080-exec-5] (113906379076538368) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:21:47.254  INFO 49504 --- [http-nio-8080-exec-5] (113906379076538368) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 10:21:47.637  INFO 49504 --- [http-nio-8080-exec-4] (113906380691345408) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:21:47.639  INFO 49504 --- [http-nio-8080-exec-4] (113906380691345408) com.example.filter.RequestLogFilter      : 请求处理耗时: 2ms | 响应结果: 101 错误
+2024-06-13 10:24:00.352  INFO 49504 --- [http-nio-8080-exec-7] (113906937338400768) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:24:00.353  INFO 49504 --- [http-nio-8080-exec-7] (113906937338400768) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:24:53.880  INFO 49504 --- [http-nio-8080-exec-9] (113907161851105280) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:24:53.881  INFO 49504 --- [http-nio-8080-exec-9] (113907161851105280) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:25:45.140  INFO 49504 --- [http-nio-8080-exec-10] (113907376851128320) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:25:45.141  INFO 49504 --- [http-nio-8080-exec-10] (113907376851128320) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:25:45.156  INFO 49504 --- [http-nio-8080-exec-1] (113907376918237184) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:25:45.157  INFO 49504 --- [http-nio-8080-exec-1] (113907376918237184) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:25:51.010  INFO 49504 --- [http-nio-8080-exec-3] (113907401471692800) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:25:51.011  INFO 49504 --- [http-nio-8080-exec-3] (113907401471692800) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 
+2024-06-13 10:25:57.043  INFO 49504 --- [http-nio-8080-exec-5] (113907426775928832) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"123456","password":"123456"}
+2024-06-13 10:25:57.111  INFO 49504 --- [http-nio-8080-exec-5] (113907426775928832) com.example.filter.RequestLogFilter      : 请求处理耗时: 68ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 10:25:57.111","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiMTIzNDU2IiwiaWQiOjEsImV4cCI6MTcxODUwNDc1NywiaWF0IjoxNzE4MjQ1NTU3LCJqdGkiOiJmZDhjOTkxZC0zN2Q3LTQ1NTEtOWU5MS01MjY5OGE2ZDBjMmIiLCJhdXRob3JpdGllcyI6WyJST0xFX3VzZXIiXX0.Ho2A5P3G0-ph689Ygwt8131lefo3dKpEM2URo26_7AE","username":"123456"},"id":113907426775928832,"message":"请求成功"}
+2024-06-13 10:25:57.176  INFO 49504 --- [http-nio-8080-exec-4] (113907427333771264) com.example.filter.RequestLogFilter      : 请求URL: "/socket/123456" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:25:57.176  INFO 49504 --- [http-nio-8080-exec-4] (113907427333771264) com.example.filter.RequestLogFilter      : 请求处理耗时: 0ms | 响应结果: 101 错误
+2024-06-13 10:25:59.549  INFO 49504 --- [http-nio-8080-exec-9] (113907437286854656) com.example.filter.RequestLogFilter      : 请求URL: "/socket/123456" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:25:59.550  INFO 49504 --- [http-nio-8080-exec-9] (113907437286854656) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 10:40:27.569  INFO 49504 --- [http-nio-8080-exec-1] (113911078026612736) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 10:40:27.576  INFO 49504 --- [http-nio-8080-exec-1] (113911078026612736) com.example.filter.RequestLogFilter      : 请求处理耗时: 7ms | 响应结果: 
+2024-06-13 11:44:53.517  INFO 49504 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 11:44:54.178  INFO 49504 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 11:44:54.243  INFO 49504 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-13 11:44:54.247  INFO 49504 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-13 14:38:43.353  INFO 15392 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 15392 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 14:38:43.354  INFO 15392 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 14:38:43.999  INFO 15392 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 14:38:44.002  INFO 15392 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 14:38:44.024  INFO 15392 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-13 14:38:44.570  INFO 15392 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 14:38:44.578  INFO 15392 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 14:38:44.578  INFO 15392 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 14:38:44.652  INFO 15392 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 14:38:44.652  INFO 15392 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1266 ms
+2024-06-13 14:38:45.636  INFO 15392 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@220be130, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@379b4e86, org.springframework.security.web.context.SecurityContextHolderFilter@20b67366, org.springframework.security.web.header.HeaderWriterFilter@7f5e9949, org.springframework.security.web.authentication.logout.LogoutFilter@21ce2e4d, com.example.filter.JwtAuthenticationFilter@62108cd3, com.example.filter.RequestLogFilter@e881e46, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62ee1c89, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c0ece6d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2337bf27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f4df55e, org.springframework.security.web.session.SessionManagementFilter@2e02cc37, org.springframework.security.web.access.ExceptionTranslationFilter@1b10f60e, org.springframework.security.web.access.intercept.AuthorizationFilter@5e278e25]
+2024-06-13 14:38:45.864  WARN 15392 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 14:38:45.864  WARN 15392 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 14:38:45.907  WARN 15392 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 14:38:45.939  WARN 15392 --- [main] (system) ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-06-13 14:38:45.951  INFO 15392 --- [main] (system) o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-13 14:38:45.961  INFO 15392 --- [main] (system) .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-13 14:38:45.975 ERROR 15392 --- [main] (system) o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-06-13 14:39:06.361  INFO 47128 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 47128 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 14:39:06.363  INFO 47128 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 14:39:06.999  INFO 47128 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 14:39:07.001  INFO 47128 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 14:39:07.024  INFO 47128 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-13 14:39:07.520  INFO 47128 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 14:39:07.527  INFO 47128 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 14:39:07.527  INFO 47128 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 14:39:07.598  INFO 47128 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 14:39:07.598  INFO 47128 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1205 ms
+2024-06-13 14:39:08.564  INFO 47128 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@59cde35, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43de9fc9, org.springframework.security.web.context.SecurityContextHolderFilter@3921135e, org.springframework.security.web.header.HeaderWriterFilter@14b9df65, org.springframework.security.web.authentication.logout.LogoutFilter@4af606e9, com.example.filter.JwtAuthenticationFilter@5c5c7cc4, com.example.filter.RequestLogFilter@696174d3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@c29b0dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@759f45f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d2eb7fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d3eb1ea, org.springframework.security.web.session.SessionManagementFilter@1c43e84e, org.springframework.security.web.access.ExceptionTranslationFilter@6aa9a93b, org.springframework.security.web.access.intercept.AuthorizationFilter@54d2f5d3]
+2024-06-13 14:39:08.789  WARN 47128 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 14:39:08.790  WARN 47128 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 14:39:08.830  WARN 47128 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 14:39:08.862  WARN 47128 --- [main] (system) ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-06-13 14:39:08.874  INFO 47128 --- [main] (system) o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-13 14:39:08.884  INFO 47128 --- [main] (system) .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-13 14:39:08.894 ERROR 47128 --- [main] (system) o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-06-13 14:39:39.128  INFO 75732 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 75732 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 14:39:39.129  INFO 75732 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 14:39:39.758  INFO 75732 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 14:39:39.760  INFO 75732 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 14:39:39.780  INFO 75732 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-13 14:39:40.275  INFO 75732 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 14:39:40.281  INFO 75732 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 14:39:40.282  INFO 75732 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 14:39:40.358  INFO 75732 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 14:39:40.358  INFO 75732 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1200 ms
+2024-06-13 14:39:41.319  INFO 75732 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@379b4e86, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f4df55e, org.springframework.security.web.context.SecurityContextHolderFilter@186d6033, org.springframework.security.web.header.HeaderWriterFilter@323eecf8, org.springframework.security.web.authentication.logout.LogoutFilter@3921135e, com.example.filter.JwtAuthenticationFilter@65753724, com.example.filter.RequestLogFilter@5c5c7cc4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ab7f649, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69419d59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4679554d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72bce309, org.springframework.security.web.session.SessionManagementFilter@6e355249, org.springframework.security.web.access.ExceptionTranslationFilter@4b916cc2, org.springframework.security.web.access.intercept.AuthorizationFilter@62ee1c89]
+2024-06-13 14:39:41.556  WARN 75732 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 14:39:41.556  WARN 75732 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 14:39:41.602  WARN 75732 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 14:39:41.652  INFO 75732 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 14:39:41.655  INFO 75732 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 14:39:41.698  INFO 75732 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#f810c18:0/SimpleConnection@3adeca1f [delegate=amqp://admin@127.0.0.1:5672/, localPort=64904]
+2024-06-13 14:39:41.740  INFO 75732 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 2.994 seconds (process running for 3.508)
+2024-06-13 14:45:00.244  INFO 75732 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 14:45:00.244  INFO 75732 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13 14:45:00.245  INFO 75732 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13 14:45:00.615  INFO 75732 --- [http-nio-8080-exec-1] (113972621233754112) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/ask-code" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"email":"486084463@qq.com","type":"register"}
+2024-06-13 14:45:00.706  INFO 75732 --- [http-nio-8080-exec-1] (113972621233754112) com.example.filter.RequestLogFilter      : 请求处理耗时: 93ms | 响应结果: 
+2024-06-13 14:45:00.723  INFO 75732 --- [http-nio-8080-exec-2] (113972621695127552) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/ask-code" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"email":"486084463@qq.com","type":"register"}
+2024-06-13 14:45:00.861  INFO 75732 --- [http-nio-8080-exec-2] (113972621695127552) com.example.filter.RequestLogFilter      : 请求处理耗时: 138ms | 响应结果: {"id":113972621695127552,"code":200,"data":null,"message":"请求成功"}
+2024-06-13 14:45:27.466  INFO 75732 --- [http-nio-8080-exec-4] (113972733863399424) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/register" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:45:27.467  INFO 75732 --- [http-nio-8080-exec-4] (113972733863399424) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 
+2024-06-13 14:45:27.473  INFO 75732 --- [http-nio-8080-exec-5] (113972733892759552) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/register" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:45:27.560  INFO 75732 --- [http-nio-8080-exec-5] (113972733892759552) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-13 14:45:27.769  INFO 75732 --- [http-nio-8080-exec-5] (113972733892759552) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7bd5d2b2
+2024-06-13 14:45:27.770  INFO 75732 --- [http-nio-8080-exec-5] (113972733892759552) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-13 14:45:27.885  INFO 75732 --- [http-nio-8080-exec-5] (113972733892759552) com.example.filter.RequestLogFilter      : 请求处理耗时: 412ms | 响应结果: {"id":113972733892759552,"code":200,"data":null,"message":"请求成功"}
+2024-06-13 14:45:48.020  INFO 75732 --- [http-nio-8080-exec-6] (113972820073123840) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"1234","password":"123456"}
+2024-06-13 14:45:48.188  INFO 75732 --- [http-nio-8080-exec-6] (113972820073123840) com.example.filter.RequestLogFilter      : 请求处理耗时: 168ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 14:45:48.169","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiMTIzNCIsImlkIjoxMywiZXhwIjoxNzE4NTIwMzQ4LCJpYXQiOjE3MTgyNjExNDgsImp0aSI6IjM1NWExMTAwLThlZmUtNDUxYy05ZDQ0LTU4MzA4NjU3MjZhNiIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.XwsA0Ioxig6DOPNWmANdMi5S0yXEev08IUU3kVL5C_o","username":"1234"},"id":113972820073123840,"message":"请求成功"}
+2024-06-13 14:45:49.646  INFO 75732 --- [http-nio-8080-exec-7] (113972826893062144) com.example.filter.RequestLogFilter      : 请求URL: "/socket/1234" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:45:49.669  INFO 75732 --- [http-nio-8080-exec-7] (113972826893062144) com.example.filter.RequestLogFilter      : 请求处理耗时: 23ms | 响应结果: 101 错误
+2024-06-13 14:46:47.653  INFO 75732 --- [http-nio-8080-exec-10] (113973070192054272) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 14:46:47.725  INFO 75732 --- [http-nio-8080-exec-10] (113973070192054272) com.example.filter.RequestLogFilter      : 请求处理耗时: 72ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 14:46:47.725","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTIwNDA3LCJpYXQiOjE3MTgyNjEyMDcsImp0aSI6IjhmOWZlNzE3LTc4OWQtNDE1OS05MmNhLTE5OWQ5Zjg4MmZiYSIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.ZoVXoJd1dRbCpBkIfdbClyNO9Mx9-l3bD9TM04CBjDo","username":"driac"},"id":113973070192054272,"message":"请求成功"}
+2024-06-13 14:46:47.838  INFO 75732 --- [http-nio-8080-exec-1] (113973070968000512) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:46:47.839  INFO 75732 --- [http-nio-8080-exec-1] (113973070968000512) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 14:48:28.045  INFO 75732 --- [http-nio-8080-exec-6] (113973491266621440) com.example.filter.RequestLogFilter      : 请求URL: "/socket/1234" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:48:28.046  INFO 75732 --- [http-nio-8080-exec-6] (113973491266621440) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 14:48:32.644  INFO 75732 --- [http-nio-8080-exec-8] (113973510556225536) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:48:32.645  INFO 75732 --- [http-nio-8080-exec-8] (113973510556225536) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 14:50:06.130  INFO 75732 --- [http-nio-8080-exec-1] (113973902664929280) com.example.filter.RequestLogFilter      : 请求URL: "/socket/1234" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:50:06.131  INFO 75732 --- [http-nio-8080-exec-1] (113973902664929280) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 14:50:09.146  INFO 75732 --- [http-nio-8080-exec-3] (113973915314950144) com.example.filter.RequestLogFilter      : 请求URL: "/socket/1234" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 14:50:09.148  INFO 75732 --- [http-nio-8080-exec-3] (113973915314950144) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 14:56:52.860  INFO 75732 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-06-13 14:56:52.885  INFO 75732 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] (system) o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-06-13 14:56:52.912  INFO 75732 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-13 14:56:52.917  INFO 75732 --- [SpringApplicationShutdownHook] (system) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-13 20:35:17.695  INFO 94928 --- [main] (system) c.example.MyProjectBackendApplication    : Starting MyProjectBackendApplication using Java 20.0.1 with PID 94928 (G:\project\web-demo\my-project-backend\target\classes started by sss in G:\project\web-demo\my-project-backend)
+2024-06-13 20:35:17.696  INFO 94928 --- [main] (system) c.example.MyProjectBackendApplication    : The following 1 profile is active: "dev"
+2024-06-13 20:35:18.413  INFO 94928 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 20:35:18.415  INFO 94928 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 20:35:18.440  INFO 94928 --- [main] (system) .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-13 20:35:19.041  INFO 94928 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-13 20:35:19.053  INFO 94928 --- [main] (system) o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13 20:35:19.053  INFO 94928 --- [main] (system) o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-06-13 20:35:19.173  INFO 94928 --- [main] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13 20:35:19.173  INFO 94928 --- [main] (system) w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1440 ms
+2024-06-13 20:35:20.393  INFO 94928 --- [main] (system) o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2573b149, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1479ed5a, org.springframework.security.web.context.SecurityContextHolderFilter@631678e6, org.springframework.security.web.header.HeaderWriterFilter@6c8ad6d7, org.springframework.security.web.authentication.logout.LogoutFilter@7474196, com.example.filter.JwtAuthenticationFilter@44abdb1f, com.example.filter.RequestLogFilter@6f24ce45, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@21ce2e4d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64d53f0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@323eecf8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3211cc84, org.springframework.security.web.session.SessionManagementFilter@33e8694b, org.springframework.security.web.access.ExceptionTranslationFilter@42db955e, org.springframework.security.web.access.intercept.AuthorizationFilter@7bd694a5]
+2024-06-13 20:35:20.671  WARN 94928 --- [main] (system) c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.entity.dto.Message".
+2024-06-13 20:35:20.671  WARN 94928 --- [main] (system) c.b.m.core.injector.DefaultSqlInjector   : class com.example.entity.dto.Message ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-06-13 20:35:20.720  WARN 94928 --- [main] (system) ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.springframework.amqp.rabbit.core.RabbitAdmin
+2024-06-13 20:35:20.772  INFO 94928 --- [main] (system) o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 20:35:20.775  INFO 94928 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-06-13 20:35:20.824  INFO 94928 --- [main] (system) o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7d7b4e04:0/SimpleConnection@e344f14 [delegate=amqp://admin@127.0.0.1:5672/, localPort=55275]
+2024-06-13 20:35:20.862  INFO 94928 --- [main] (system) c.example.MyProjectBackendApplication    : Started MyProjectBackendApplication in 3.589 seconds (process running for 4.354)
+2024-06-13 20:35:21.047  INFO 94928 --- [http-nio-8080-exec-1] (system) o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 20:35:21.047  INFO 94928 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13 20:35:21.048  INFO 94928 --- [http-nio-8080-exec-1] (system) o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13 20:35:21.448  INFO 94928 --- [http-nio-8080-exec-1] (114060789001883648) com.example.filter.RequestLogFilter      : 请求URL: "/socket/null" (GET) | 远程IP地址: 127.0.0.1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:35:21.606  INFO 94928 --- [http-nio-8080-exec-1] (114060789001883648) com.example.filter.RequestLogFilter      : 请求处理耗时: 159ms | 响应结果: 101 错误
+2024-06-13 20:35:23.223  INFO 94928 --- [http-nio-8080-exec-3] (114060796450967552) com.example.filter.RequestLogFilter      : 请求URL: "/socket/null" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:35:23.224  INFO 94928 --- [http-nio-8080-exec-3] (114060796450967552) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 20:35:24.031  INFO 94928 --- [http-nio-8080-exec-5] (114060799839965184) com.example.filter.RequestLogFilter      : 请求URL: "/socket/null" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:35:24.032  INFO 94928 --- [http-nio-8080-exec-5] (114060799839965184) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 20:35:24.507  INFO 94928 --- [http-nio-8080-exec-7] (114060801836453888) com.example.filter.RequestLogFilter      : 请求URL: "/socket/null" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:35:24.508  INFO 94928 --- [http-nio-8080-exec-7] (114060801836453888) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 20:35:31.768  INFO 94928 --- [http-nio-8080-exec-8] (114060832291295232) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/logout" (OPTIONS) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:35:31.782  INFO 94928 --- [http-nio-8080-exec-8] (114060832291295232) com.example.filter.RequestLogFilter      : 请求处理耗时: 14ms | 响应结果: 
+2024-06-13 20:40:28.139  INFO 94928 --- [http-nio-8080-exec-1] (114062075361366016) com.example.filter.RequestLogFilter      : 请求URL: "/api/auth/login" (POST) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {"username":"driac","password":"123456"}
+2024-06-13 20:40:28.265  INFO 94928 --- [http-nio-8080-exec-1] (114062075361366016) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-13 20:40:28.472  INFO 94928 --- [http-nio-8080-exec-1] (114062075361366016) com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@678e2254
+2024-06-13 20:40:28.473  INFO 94928 --- [http-nio-8080-exec-1] (114062075361366016) com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-13 20:40:28.589  INFO 94928 --- [http-nio-8080-exec-1] (114062075361366016) com.example.filter.RequestLogFilter      : 请求处理耗时: 450ms | 响应结果: {"code":200,"data":{"expire":"2024-06-16 20:40:28.584","role":"user","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiZHJpYWMiLCJpZCI6MiwiZXhwIjoxNzE4NTQxNjI4LCJpYXQiOjE3MTgyODI0MjgsImp0aSI6IjA0MjlmODZhLWJlZGItNDRlMS05Y2E0LTYwZDYzNWMxODg2ZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfdXNlciJdfQ.PVn-y-7ICmFZar55tgB8IhdzrI1EXpD38Z6UCM00G-8","username":"driac"},"id":114062075361366016,"message":"请求成功"}
+2024-06-13 20:40:28.646  INFO 94928 --- [http-nio-8080-exec-2] (114062077487878144) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:40:28.647  INFO 94928 --- [http-nio-8080-exec-2] (114062077487878144) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误
+2024-06-13 20:40:30.829  INFO 94928 --- [http-nio-8080-exec-5] (114062086644043776) com.example.filter.RequestLogFilter      : 请求URL: "/socket/driac" (GET) | 远程IP地址: 0:0:0:0:0:0:0:1 │ 身份: 未验证 | 请求参数列表: {}
+2024-06-13 20:40:30.830  INFO 94928 --- [http-nio-8080-exec-5] (114062086644043776) com.example.filter.RequestLogFilter      : 请求处理耗时: 1ms | 响应结果: 101 错误

@@ -88,7 +88,7 @@ onActivated(() => {
 
   // 连接服务器
   socket.onopen = () => {
-    console.log("已连接至服务器");
+    console.log("已连接至服务器" + socketUrl.toString);
   };
 
   // 浏览器接收服务端发送的消息
