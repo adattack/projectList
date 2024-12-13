@@ -4,11 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @author lkunk
- * @date 2023年07月03日 13:58
- * @description
- */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
